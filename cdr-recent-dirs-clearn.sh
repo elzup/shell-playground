@@ -1,13 +1,13 @@
 #!/bin/sh
-# ./cdr-recent-dirs-clearn.sh > ~/.chpwd-recent-dirs-clearn
+out_file=~/.chpwd-recent-dirs-clearn
 
 cat ~/.chpwd-recent-dirs \
   | sed -e 's/^..\(.*\)./\1/g' \
   | while read line
 do
   if [ -d "$line" ]; then
-    echo "\$'$line'"
+    echo "\$'$line'" >> $out_file
   fi
 done
 
-echo '$ mv ~/.chpwd-recent-dirs-clearn ~/.chpwd-recent-dirs'
+mv $out_file ~/.chpwd-recent-dirs
