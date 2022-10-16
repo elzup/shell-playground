@@ -1,0 +1,3 @@
+export ENVVAR_EXPORTED=111
+envvar=222
+ENVVAR=333
