@@ -1,3 +1,3 @@
-for i in {100..264}; do
-  nmap 192.168.100.$i -p80
+for i in {2..200}; do
+  nmap 192.168.8.$i -p80
 done
